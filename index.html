@@ -24,6 +24,7 @@
                 <li class="list-group-item"><a href="">About</a></li>
                 <li class="list-group-item"><a href="">Services</a></li>
                 <li class="list-group-item"><a href="">Contact Us</a></li>
+                <li class="list-group-item"><a href="#add-item">To do list</a></li>
             </ul>
             <div id="progress-bar"></div>
         </nav>
@@ -38,16 +39,17 @@
 
         </aside>
 
-
-
         <main id="main">
             <section>
                 <div id="number-wrapper">10</div>
                 <h3>Learning Javascript from Udemy Course by Qaifi Khan</h3>
-                <h4>Login Form</h4>
+                <h2 id="welcome-note">Welcome </h2>
                 <form id="login-form">
-                    <input id="username" type="text" name="username" placeholder="Username" required />
+                    <h4>Login Form</h4>
+                    <input id="username" type="text" name="username" placeholder="Username" required autocomplete="off"/>
+                    <p id="username-err">Please enter a valid username</p>
                     <input id="password" type="password" name="password" placeholder="Password" required />
+                    <p id="password-err">minimum length of 6 and contains at least one upper case letter, one lower case letter,one number, and one special character.</p>
                     <input id="btn-submit" type="submit" value="Login" />
                 </form>
             </section>

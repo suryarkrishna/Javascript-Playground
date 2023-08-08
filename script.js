@@ -15,11 +15,7 @@ var interval = setInterval(function () {
   }
 }, 1000);
 
-//changing the input field text to upper case
-var username = document.getElementById("username");
-username.addEventListener("input", function (event) {
-  username.value = event.target.value.toUpperCase();
-});
+
 
 var list = document.getElementById("list");
 var btnAdd = document.getElementById("btn-add");
@@ -84,6 +80,47 @@ btnRemove.addEventListener("click", function (e) {
 list.addEventListener('click',function(e){
     var id = e.target.id;
     var btnDel =  document.getElementById(id);
+    if(list.childElementCount == 0){
     list.removeChild(btnDel.parentElement);
+    }
+})
+
+
+//changing the input field text to upper case
+// var username = document.getElementById("username");
+// username.addEventListener("input", function (event) {
+//   username.value = event.target.value.toUpperCase();
+// });
+//form validation using regex
+username.addEventListener('input',function(e){
+var pattern = /^[\w]{4,20}$/;
+var str = e.target.value;
+  if(pattern.test(str)){
+    document.getElementById('username-err').style.display='none';
+  }else{
+    document.getElementById('username-err').style.display='block';
+  }
+})
+
+var password = document.getElementById('password');
+password.addEventListener('input',function(e){
+  //password meets the minimum length requirement and contains at least one upper case letter, one lower case letter,one number, and one special character.
+  var pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+  var str = e.target.value;
+    if(pattern.test(str)){
+      document.getElementById('password-err').style.display='none';
+    }else{
+      document.getElementById('password-err').style.display='block';
+    }
+  })
+
+//on submit
+var formLogin = document.getElementById('login-form');
+formLogin.addEventListener('submit', function(e){
+  e.preventDefault();
+  document.getElementById('login-form').style.display='none';
+  document.getElementById('welcome-note').style.display="block";
+  document.getElementById('welcome-note').innerHTML+=username.value;
+
 })
 

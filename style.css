@@ -12,7 +12,7 @@
         'side-bar main main main'
         'footer footer footer footer';
     grid-template-columns: 200px auto;
-    grid-template-rows: auto 25px auto 30px;
+    grid-template-rows: 50px 25px auto 30px;
 
     width: 100%;
     height: 100vh;
@@ -43,8 +43,7 @@ h1 {
 
 }
 
-
-#login-form, h4 {
+#login-form {
     display: flex;
     flex-direction: column;
     row-gap: 5px;
@@ -191,7 +190,7 @@ button[id*='btn'] {
             'main main main'
             'footer footer footer';
         grid-template-columns: 200px auto;
-        grid-template-rows: auto 22px 18px auto 20px;
+        grid-template-rows: 40px 22px 18px auto 20px;
 
         column-gap: 0px;
         width: 100%;
@@ -207,4 +206,19 @@ button[id*='btn'] {
     }
     
 
+}
+
+#username-err, #password-err {
+    color:red;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-top: 2px;
+    margin-bottom: 3px;
+    display: none;
+}
+
+#welcome-note {
+    display: none;
+    text-align: center;
+    background-image: linear-gradient(white, rgb(77, 75, 75));
 }
